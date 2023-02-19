@@ -65,9 +65,9 @@ property|description|option|option_description|example
 "size":[list string]|textureで指定した画像をsizeの大きさに変更します<br>縦横比が元の画像と違う場合引き伸ばされます<br>[縦の長さ,横の長さ]という風に記述します|数字やui内だけの特殊な数式で書かれます,<br>uilang(適当)は複雑なため用検証| |"size":[16,32] 
 "layer":{number}|複数の画像が重なった際に値の大きい方が上に表示されます<br>同じ値の画像が重なった場合非常に見にくくなります|数字||"layer":1
 "offset":[list_string]|始点の位置からの場所を指定します<br>anchor_from<br>anchor_toで決めた始点を0とし,上方向へマイナス 下方向へプラス 左方向へマイナス 右方向へプラスという風になっています
-"uv_size":[]|忘れた
-"uv"|忘れた<br>アニメーション関係
-"disable_anim_fast_forward"|調査中
+"uv_size":[list string]|忘れた
+"uv":{string}|imageに反映するアニメーションを指定します|@+アニメーションのname||"uv":@example_anim
+"disable_anim_fast_forward":{bool}|調査中|ture<br>false
 "texture_file_system"|調査中
 "color":[list string]|色<br>画像にどの様な挙動をするか未確認
 "alpha":{number}|透明度|0~1|0で完全透明、1で不透明になります~~逆だったらすまん~~|"alpha":0.8
