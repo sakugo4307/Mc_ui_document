@@ -69,27 +69,27 @@ uv_size|string|忘れた
 uv|string|imageに反映するアニメーション|@継承namespace.アニメーションのname||"uv":@example_anim
 disable_anim_fast_forward|bool|調査中|ture<br>false
 texture_file_system|string|調査中<br>テクスチャのファイル関連<br>スクショ関連に使われる模様|
-color|string|画像の色を変更<br>rgbの割合で表記されます|0~1||"color":[0,0,0.6670]
+color|string|画像の色を変更<br>rgbの割合で表記|0~1||"color":[0,0,0.6670]
 alpha|number|透明度|0<br>~<br>1|完全透明<br><br>不透明|"alpha":0.8
-force_texture_reload||調査中
+force_texture_reload|bool|調査中|true<br>false
 fill|bool|sizeで指定した大きさが100%以下の時、その大きさに画像を切り抜く|true<br>false|切り抜く<br>縮小|"fill":true
 visible|bool|透明か否か<br>trueの時ボタン当の機能を中に付けた場合見えないが動作はする|true<br>false|透明<br>非透明|"visible":true
 tiled|bool|画像を格子状に並べる|true<br>false|並べる<br>並べない|"tiled": true
 tiled_scale|string|tiledで並べる画像の1つ1つの大きさ|||"tlied_scale":[0.5,0.5]
 max_size<br>min_size|string|調査中<br>おそらくsizeをuilangで書いた時の最大値,最小値を設定する
-bilinear||調査中
-anims||調査中
-zip_folder||調査中
+bilinear|bool|調査中|true<br>false
+anims|object|調査中
+zip_folder|string|調査中
 ignored|bool|すべてのプロパティが無効化|true<br>false|無効<br>有効|"ignored":true
-priority||調査中
-keep_ratio||調査中
-use_anchored_offset||調査中
+priority|number|調査中|true<br>false
+keep_ratio|bool|調査中|true<br>false
+use_anchored_offset|bool|調査中
 grayscale|bool|調査中|true<br>flase
-clip_ratio||調査中
+clip_ratio|nymber|調査中
 allow_debug_missing_texture|bool|テクスチャが読み込めなかった際に代わりにエラー画像を使用する|true<br>false|使用する<br>使用しない|"allow_debug_missing_texture": false
-follows_cursor||調査中
-propagate_alpha||調査中
-animation_reset_name||調査中
+follows_cursor|bool|調査中|true<br>false
+propagate_alpha|bool|調査中|true<br>false
+animation_reset_name|string|調査中
 
 **"bindings":[list object]**  
 条件式によって画像の表示、非表示が切り替えられる模様  
