@@ -62,42 +62,49 @@ property|description|option|option_description|example
 "clip_direction":{string}|解析中|left<br>right|解析中|"clip_direction":"left"  
 "clip_pixelperfect":{bool}|解析中|true<br>false|解析中|
 "anchor_from":{string}<br>"anchor_to":{string}|imageをどこに寄せるかを指定します<br>ここで決めた位置が始点になります<br>2つの違いについては解析中|top_right<br>top_left<br>top_middle<br>middle_right<br>middle_left<br>bottom_right<br>bottom_left<br>bottom_middle<br>center|右上<br>左上<br>中央上<br>右中央<br>左中央<br>右下<br>右上<br>中央下<br>画面中央|"anchor_from":"top_left"<br>"anchor_to":"top_left"
-"size":[list string]|textureで指定した画像をsizeの大きさに変更します<br>縦横比が元の画像と違う場合引き伸ばされます<br>[縦の長さ,横の長さ]という風に記述します|数字やui内だけの特殊な数式で書かれます,<br>uilang(適当)は複雑なため用検証| |"size":[16,32] 
+"size":[list string]|textureで指定した画像をsizeの大きさに変更します<br>[縦の長さ,横の長さ]という風に記述します|number<br>px<br>%<br>%c<br>%cm<br>%x<br>%y<br>default<br>fill| |"size":[16,32]<br>"size":["100%c - 10px",default"]
 "layer":{number}|複数の画像が重なった際に値の大きい方が上に表示されます<br>同じ値の画像が重なった場合非常に見にくくなります|数字||"layer":1
-"offset":[list_string]|始点の位置からの場所を指定します<br>anchor_from<br>anchor_toで決めた始点を0とし,上方向へマイナス 下方向へプラス 左方向へマイナス 右方向へプラスという風になっています
+"offset":[list_string]|始点の位置からの場所を指定します<br>anchor_from<br>anchor_toで決めた始点を0とし,上方向へマイナス 下方向へプラス 左方向へマイナス 右方向へプラスという風になっています|number<br>px<br>%
 "uv_size":[list string]|忘れた
-"uv":{string}|imageに反映するアニメーションを指定します|@+アニメーションのname||"uv":@example_anim
+"uv":{string}|imageに反映するアニメーションを指定します|@+(引用元namespace.)アニメーションのname||"uv":@example_anim
 "disable_anim_fast_forward":{bool}|調査中|ture<br>false
-"texture_file_system"|調査中
-"color":[list string]|色<br>画像にどの様な挙動をするか未確認
-"alpha":{number}|透明度|0~1|0で完全透明、1で不透明になります~~逆だったらすまん~~|"alpha":0.8
+"texture_file_system":{string}|調査中<br>テクスチャのファイル関連<br>スクショ関連に使われる模様|
+"color":[list string]|画像の色を変更します<br>元の色が白以外は黒くっぽくなります<br>rgbの割合で表記されます|0~1||"color":[0,0,0.6670]
+"alpha":{number}|透明度を設定します|0<br>~<br>1|完全透明<br><br>不透明|"alpha":0.8
 "force_texture_reload"|調査中
-"fill"|調査中
-"visible":{bool}|透明か否か<br>trueの時ボタン当の機能を中に付けた場合見えないが動作はする|true<br>false|trueで透明<br>falseで非透明|"visible":true
-"tiled"|調査中
+"fill":{bool}|sizeで指定した大きさが100%以下の時、その大きさに画像を切り抜きます?|true<br>false|切り抜く<br>伸縮(default)|"fill":true
+"visible":{bool}|透明か否か<br>trueの時ボタン当の機能を中に付けた場合見えないが動作はする|true<br>false|透明<br>非透明|"visible":true
+"tiled":{bool}|画像を格子状に並べるかどうかを決定します|true<br>false|並べる<br>並べない|"tiled": true
+"tiled_scale":[list string]|tiledで並べる画像の1つ1つの大きさを設定します|||"tlied_scale":[0.5,0.5]
 "max_size"<br>"min_size"|調査中<br>おそらくsizeをuilangで書いた時の最大値,最小値を設定する
 "bilinear"|調査中
 "anims"|調査中
 "zip_folder"|調査中
-"ignored":{bool}|uiプロパティを有効か無効か<br>有効にした場合はすべてのプロパティが無効化される<br>texture等も無効化され透明になる模様<br>trueの時ボタン当の機能を中に付けた場合押せない|true<br>false|trueで無効<br>falseで有効|"ignored":true
+"ignored":{bool}|すべてのプロパティが無効化するかどうかを決定します|true<br>false|無効<br>有効|"ignored":true
 "priority"|調査中
-"property_bag"|調査中
 "keep_ratio"|調査中
 "use_anchored_offset"|調査中
-"grayscale"|調査中
+"grayscale":{bool}|調査中|true<br>flase
 "clip_ratio"|調査中
-"allow_debug_missing_texture"|調査中
-"tiled_scale"|調査中
+"allow_debug_missing_texture":{bool}|テクスチャが読み込めなかった際に代わりにエラー画像を出すかどうかを決定します|true<br>false|表示する<br>表示しない|"allow_debug_missing_texture": false
 "follows_cursor"|調査中
 "propagate_alpha"|調査中
 "animation_reset_name"|調査中
 
-**"bindings":{object}**  
+**"bindings":[list object]**  
 条件式によって画像の表示、非表示が切り替えられる模様  
 また他の機能もある  
 調査中  
+"binding_name"  
+"binding_name_override"  
+"binding_type":
+"binding_collection_name":
 
-**"variables":{object}**  
+**"variables":[list object]**  
 なんか条件式でどうのこうの  
-調査中
+調査中  
+"requires"  
+
+**"property_bag":{object}**
+"#helper_link":
 
