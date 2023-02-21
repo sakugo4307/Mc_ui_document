@@ -128,7 +128,7 @@ initial_uv|string|
 frame_count|string|フレーム数|number
 frame_step|string|フレームの幅|number
 fps|string|再生速度|number
-easing|string||linear
+easing|string|動作しない模様|linear推奨||
 next|string|次に再生するアニメーション|@namespace.name||
 resettable|bool||true<br>flase
 reversible|bool|幅まで表示したときに折り返す|true<br>false|折り返す<br>始めに戻る
