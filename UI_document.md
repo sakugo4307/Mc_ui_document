@@ -61,11 +61,11 @@ property|type|description|option|option_description|example
 ---|---|---|---|---|---
 texture|string|画像ファイルのパス| | |"texture":"texture/ui/example_image"  
 anchor_from<br>anchor_to|string|imageの始点　fromで大まかな位置を決める　toでformで決めた位置に当たる部分を決める|top_right<br>top_left<br>top_middle<br>middle_right<br>middle_left<br>bottom_right<br>bottom_left<br>bottom_middle<br>center|右上<br>左上<br>中央上<br>右中央<br>左中央<br>右下<br>右上<br>中央下<br>画面中央|"anchor_from":"top_left"<br>"anchor_to":"top_left"
-size|string|画像をsizeの大きさに変更<br>[縦,横]|number<br>px<br>%<br>%c<br>%cm<br>%x<br>%y<br>default<br>fill| |"size":[16,32]<br>"size":["100%c - 10px",default"]
+size|string|画像をsizeの大きさに変更<br>[縦,横]<br>sizeアニメーションの指定|number<br>px<br>%<br>%c<br>%cm<br>%x<br>%y<br>default<br>fill| |"size":[16,32]<br>"size":["100%c - 10px",default"]
 layer|number|複数の画像が重なった際に値の大きい方が上に表示|数字||"layer":1
-offset|string|始点の位置からの座標<br>anchor_from<br>anchor_toで決めた始点を0とし,上- 下+ 左- 右+|number<br>px<br>%
+offset|string|始点の位置からの座標<br>anchor_from<br>anchor_toで決めた始点を0とし,上- 下+ 左- 右+<br>offsetアニメーションの指定|number<br>px<br>%
 uv_size|string|アニメーションをする際の１フレームの大きさ|number||"uv_size":[16,16]
-uv|string|imageに反映するアニメーション|@継承namespace.アニメーションのname||"uv":@example_anim
+uv|string|flip_bookアニメーションの指定|@継承namespace.アニメーションのname||"uv":@example_anim
 disable_anim_fast_forward|bool|不明|ture<br>false
 texture_file_system|string|調査中<br>テクスチャのファイル関連<br>スクショ関連に使われる模様|
 color|string|画像の色を変更<br>rgbの割合で表記|0~1||"color":[0,0,0.6670]
@@ -158,6 +158,46 @@ tts_skip_message|bool
 bindings
 variables
 property_bag
+
+### buttonプロパティ一覧  
+**"type":"button"**  
+  
+使用できるプロパティは以下の通り
+property|type|description|option|option_description|example
+---|---|---|---|---|---
+size|string|大きさ
+offset|string|位置
+layer|number|表示の優先度
+anchor_from|string|始点
+anchor_to|sting|始点と重なる位置 
+ignored|bool|無視する
+visible|bool|非表示
+enabled|bool|
+default_control|object|デフォルト状態の子要素
+hover_control|object|ホバー状態の子要素
+pressed_control|object|押したときの子要素
+locked_control|object|ロック状態の子要素
+button_mappings
+sound_name|string|押したときになるサウンドの名前
+sound_volume|string|サウンドの大きさ
+sound_pitch|string|サウンドのピッチ
+default_focus_precedence
+consume_event
+follows_cursor
+always_handle_pointer
+focus_enabled
+focus_identifier
+focus_change_down
+focus_change_up
+focus_change_left
+focus_change_right
+focus_wrap_enabled
+focus_magnet_enabled
+tts_name
+tts_control_header
+tts_section_header
+tts_control_type_order_priority
+tts_index_priority
 
 ### panelプロパティ一覧  
 **"type":"panel"**  
@@ -365,46 +405,7 @@ primary_color
 visible
 allow_clipping'
 
-### buttonプロパティ一覧  
-**"type":"button"**  
-  
-使用できるプロパティは以下の通り
-property|type|description|option|option_description|example
----|---|---|---|---|---
-size
-bindings
-button_mappings
-layer
-anchor_from
-anchor_to
-default_control
-hover_control
-pressed_control
-focus_enabled
-ignored
-focus_identifier
-focus_change_down
-focus_change_up
-focus_change_left
-focus_change_right
-focus_wrap_enabled
-focus_magnet_enabled
-sound_name
-sound_volume
-sound_pitch
-default_focus_precedence
-offset
-locked_control
-enabled
-consume_event
-tts_name
-tts_control_header
-tts_section_header
-tts_control_type_order_priority
-tts_index_priority
-follows_cursor
-always_handle_pointer
-visible
+
 
 ### selection_wheelプロパティ一覧  
 **"type":"selection_wheel"**  
