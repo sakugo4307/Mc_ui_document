@@ -102,9 +102,17 @@ animes|string|
 "binding_collection_name":
 
 **"variables":[list object]**  
-なんか条件式でどうのこうの  
-調査中  
 "requires"  
+に書いた条件式がtrueを返す場合に任意の定数の置き換えができます
+```
+"variables":[
+ {
+	 "requires": "($hp_per < 15 )",
+	 "$hp_size": [12,7]
+  }
+]
+```
+
 
 **"property_bag":{object}**
 "#helper_link":
