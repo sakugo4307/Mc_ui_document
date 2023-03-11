@@ -344,21 +344,21 @@ prevent_touch_input
 
 ### gridプロパティ一覧  
 **"type":"grid"**  
-  
+要素を複製して並べます
 使用できるプロパティは以下の通り
 property|type|description|option|option_description|example
 ---|---|---|---|---|---
-size
-anchor_from
-anchor_to
-grid_dimensions
-grid_rescaling_type
-maximum_grid_items
-collection_name
-grid_item_template
-offset
-layer
-grid_dimension_binding
+size|string
+anchor_from|
+anchor_to|
+grid_dimensions|
+grid_rescaling_type|
+maximum_grid_items|
+collection_name|
+grid_item_template|string|gridで複製する要素を指定
+offset|
+layer|
+grid_dimension_binding|
 bindings
 grid_fill_direction
 variables
